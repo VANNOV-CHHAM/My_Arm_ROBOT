@@ -1,0 +1,371 @@
+<?xml version='1.0'?>
+
+<robot name="Arm_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:property name="cameraSize" value="0.05" />
+<xacro:property name="cameraMass" value="0.1" />
+
+<xacro:include filename="$(find newrobot_description)/urdf/materials.xacro"/>
+<xacro:include filename="$(find newrobot_description)/urdf/spcbot.dazebo"/>
+
+	<!-- * * * Link Definitions * * * -->
+
+ 	<link name="base_link">
+		<visual>
+		    <origin xyz="0 0 0.0425" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.4 0.4 0.085"/>
+			</geometry>
+			<material name="Cyan1">
+	       		<color rgba="0 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>	
+	</link>
+
+   	<link name="cycle1_link">
+		<visual>
+			<origin xyz="0 0 0.1" rpy="0 0 0"/>
+			<geometry>
+				<cylinder radius="0.15" length="0.05"/>
+			</geometry>
+	     	<material name="Cyan3">
+				<color rgba="0 0.5 0.5 1"/>
+			</material>
+	   </visual>
+	</link>
+ 	<link name="box2_link">
+		<visual>
+		    <origin xyz="0 0.03 0.175" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.15 0.1 0.1"/>
+			</geometry>
+			<material name="Cyan1">
+	       		<color rgba="0 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>	
+	</link>
+
+		
+     
+   	<link name="cycle2_link">
+		<visual>
+            <!-- * * * <origin xyz="0 -0.025 0.175" rpy="1.57 0 0"/> * * * -->
+			<origin xyz="0 0 0" rpy="1.57 0 0"/>
+			<geometry>
+				<cylinder radius="0.05" length="0.01"/>
+			</geometry>
+	     	<material name="Cyan3">
+				<color rgba="0 0.5 0.5 1"/>
+			</material>
+	   </visual>
+	</link>
+ 	<link name="box3_link">
+		<visual>
+          <!-- * * * <origin xyz="0 -0.05 0.25" rpy="0 0 0"/> * * * -->
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.08 0.04 0.2"/>
+			</geometry>
+			<material name="Cyan1">
+	       		<color rgba="0 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>	
+	</link>
+   	<link name="cycle3_link">
+		<visual>
+          <!-- * * * <origin xyz="0 -0.025 0.3" rpy="1.57 0 0"/> * * * -->
+			<origin xyz="0 0 0" rpy="1.57 0 0"/>
+			<geometry>
+				<cylinder radius="0.05" length="0.01"/>
+			</geometry>
+	     	<material name="Cyan3">
+				<color rgba="0 0.5 0.5 1"/>
+			</material>
+	   </visual>
+	</link>
+ 	<link name="box4_link">
+		<visual>
+          <!--<origin xyz="0 0 0.43" rpy="0 0 0"/> -->
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.08 0.04 0.35"/>
+			</geometry>
+			<material name="Cyan1">
+	       		<color rgba="0 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>	
+	</link>
+   	<link name="cycle4_link">
+		<visual>
+			<origin xyz="0 0 0" rpy="1.57 0 0"/>
+			<geometry>
+				<cylinder radius="0.05" length="0.01"/>
+			</geometry>
+	     	<material name="Cyan3">
+				<color rgba="0 0.5 0.5 1"/>
+			</material>
+	   </visual>
+	</link>
+ 	<link name="box5_link">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.08 0.04 0.3"/>
+			</geometry>
+			<material name="Cyan1">
+	       		<color rgba="0 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>	
+	</link>
+   	<link name="cycle5_link">
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<cylinder radius="0.02" length="0.07"/>
+			</geometry>
+	     	<material name="Cyan3">
+				<color rgba="0 0.5 0.5 1"/>
+			</material>
+	   </visual>
+	</link>
+   	<link name="cycle6_link">
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<cylinder radius="0.04" length="0.01"/>
+			</geometry>
+	     	<material name="Cyan3">
+				<color rgba="0 0.5 0.5 1"/>
+			</material>
+	   </visual>
+	</link>
+   	<link name="Korg1_link">
+		<visual>
+			<origin xyz="0.13 0.22 0.03" rpy="1.57 0 0"/>
+			<geometry>
+				<cylinder radius="0.07" length="0.04"/>
+			</geometry>
+	     	<material name="black">
+				<color rgba="0 0 0 1"/>
+			</material>
+	   </visual>
+	</link>
+   	<link name="Korg2_link">
+		<visual>
+			<origin xyz="-0.13 0.22 0.03" rpy="1.57 0 0"/>
+			<geometry>
+				<cylinder radius="0.07" length="0.04"/>
+			</geometry>
+	     	<material name="black">
+				<color rgba="0 0 0 1"/>
+			</material>
+	   </visual>
+	</link>
+   	<link name="Korg3_link">
+		<visual>
+			<origin xyz="0.13 -0.22 0.03" rpy="1.57 0 0"/>
+			<geometry>
+				<cylinder radius="0.07" length="0.04"/>
+			</geometry>
+	     	<material name="black">
+				<color rgba="0 0 0 1"/>
+			</material>
+	   </visual>
+	</link>
+   	<link name="Korg4_link">
+		<visual>
+			<origin xyz="-0.13 -0.22 0.03" rpy="1.57 0 0"/>
+			<geometry>
+				<cylinder radius="0.07" length="0.04"/>
+			</geometry>
+	     	<material name="black">
+				<color rgba="0 0 0 1"/>
+			</material>
+	   </visual>
+	</link>
+ 	<link name="camera1_link">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.01 0.01 0.01"/>
+			</geometry>
+			<material name="Cyan10">
+	       		<color rgba="1 0 0.9 1.0"/>
+	     	</material>
+		</visual>	
+	</link>
+
+ 	<link name="camera2_link">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.02 0.03 0.02"/>
+			</geometry>
+			<material name="Cyan2">
+	       		<color rgba="1 0 0.9 1.0"/>
+	     	</material>
+		</visual>	
+	</link>
+
+
+		<!-- * * * Link Definitions * * * -->
+<joint name="rot1_joint" type="revolute">
+    	<parent link="base_link"/>
+    	<child link="cycle1_link"/>
+    	<origin xyz="0 0 0" rpy="0 0 0"/>
+    	<axis xyz="0 0 1"/>
+    	<limit lower="-3.14" upper="3.14" effort="10" velocity="3"/>
+  	</joint>
+
+<joint name="firot1_joint" type="fixed">
+    	<parent link="cycle1_link"/>
+    	<child link="box2_link"/>
+    	<origin xyz="0 0 0" rpy="0 0 0"/>
+    	<axis xyz="0 0 1"/>
+    	<limit lower="-0.3925" upper="0.3925" effort="10" velocity="3"/>
+  	</joint>
+
+<joint name="rot2_joint" type="revolute">
+    	<parent link="box2_link"/>
+    	<child link="cycle2_link"/>
+    	<origin xyz="0 -0.025 0.175" rpy="0 0 0"/>
+    	<axis xyz="0 1 0"/>
+    	<limit lower="-1.2" upper="1.2" effort="10" velocity="3"/>
+  	</joint>
+
+<joint name="firot2_joint" type="fixed">
+    	<parent link="cycle2_link"/>
+    	<child link="box3_link"/>
+    	<origin xyz="0 -0.025 0.08" rpy="0 0 0"/>
+    	<axis xyz="0 0 1"/>
+    	<limit lower="-3.1416" upper="3.1416" effort="10" velocity="3"/>
+  	</joint>
+
+<joint name="rot3_joint" type="revolute">
+    	<parent link="box3_link"/>
+    	<child link="cycle3_link"/>
+    	<origin xyz="0 0.022 0.07 " rpy="0 0 0"/>
+    	<axis xyz="0 1 0"/>
+    	<limit lower="-1.1" upper="1.1" effort="10" velocity="3"/>
+  	</joint>
+
+<joint name="firot3_joint" type="fixed">
+    	<parent link="cycle3_link"/>
+    	<child link="box4_link"/>
+    	<origin xyz="0 0.025 0.13" rpy="0 0 0"/>
+    	<axis xyz="0 0 1"/>
+    	<limit lower="-3.1416" upper="3.1416" effort="10" velocity="3"/>
+  	</joint>
+
+<joint name="rot4_joint" type="revolute">
+    	<parent link="box4_link"/>
+    	<child link="cycle4_link"/>
+    	<origin xyz="0 -0.025 0.13" rpy="0 0 0"/>
+    	<axis xyz="0 1 0"/>
+    	<limit lower="-1.1" upper="1.1" effort="10" velocity="3"/>
+  	</joint>
+
+<joint name="firot4_joint" type="fixed">
+    	<parent link="cycle4_link"/>
+    	<child link="box5_link"/>
+    	<origin xyz="0 -0.025 0.1" rpy="0 0 0"/>
+    	<axis xyz="0 0 1"/>
+    	<limit lower="-3.1416" upper="3.1416" effort="10" velocity="3"/>
+  	</joint>
+
+<joint name="firot5_joint" type="fixed">
+    	<parent link="box5_link"/>
+    	<child link="cycle5_link"/>
+    	<origin xyz="0 0 0.18" rpy="0 0 0"/>
+    	<axis xyz="0 0 1"/>
+    	<limit lower="-3.1416" upper="3.1416" effort="10" velocity="3"/>
+  	</joint>
+
+<joint name="firot6_joint" type="fixed">
+    	<parent link="cycle5_link"/>
+    	<child link="cycle6_link"/>
+    	<origin xyz="0 0 0.03" rpy="0 0 0"/>
+    	<axis xyz="0 0 1"/>
+    	<limit lower="-3.1416" upper="3.1416" effort="10" velocity="3"/>
+  	</joint>
+<joint name="fixekorg1_joint" type="fixed">
+    	<parent link="base_link"/>
+    	<child link="Korg1_link"/>
+    	<origin xyz="0 0 0" rpy="0 0 0"/>
+    	<axis xyz="0 0 1"/>
+    	<limit lower="-3.1416" upper="3.1416" effort="10" velocity="3"/>
+  	</joint>
+
+<joint name="fixekorg2_joint" type="fixed">
+    	<parent link="base_link"/>
+    	<child link="Korg2_link"/>
+    	<origin xyz="0 0 0" rpy="0 0 0"/>
+    	<axis xyz="0 0 1"/>
+    	<limit lower="-3.1416" upper="3.1416" effort="10" velocity="3"/>
+  	</joint>
+
+<joint name="fixekorg3_joint" type="fixed">
+    	<parent link="base_link"/>
+    	<child link="Korg3_link"/>
+    	<origin xyz="0 0 0" rpy="0 0 0"/>
+    	<axis xyz="0 0 1"/>
+    	<limit lower="-3.1416" upper="3.1416" effort="10" velocity="3"/>
+  	</joint>
+
+<joint name="fixekorg4_joint" type="fixed">
+    	<parent link="base_link"/>
+    	<child link="Korg4_link"/>
+    	<origin xyz="0 0 0" rpy="0 0 0"/>
+    	<axis xyz="0 0 1"/>
+    	<limit lower="-3.1416" upper="3.1416" effort="10" velocity="3"/>
+  	</joint>
+
+<joint name="fixcamera1_joint" type="fixed">
+    	<parent link="cycle6_link"/>
+    	<child link="camera1_link"/>
+    	<origin xyz="0 0 0.005" rpy="0 0 0"/>
+    	<axis xyz="0 0 1"/>
+    	<limit lower="-3.1416" upper="3.1416" effort="10" velocity="3"/>
+  	</joint>
+
+<joint name="fixcamera2_joint" type="fixed">
+    	<parent link="base_link"/>
+    	<child link="camera2_link"/>
+    	<origin xyz="0.2 0 0.05" rpy="0 0 0"/>
+    	<axis xyz="0 0 1"/>
+    	<limit lower="-3.1416" upper="3.1416" effort="10" velocity="3"/>
+  	</joint>
+
+
+<joint name="camera_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="-0.2 0 0.05" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="camera"/>
+  </joint>
+
+  <!-- Camera -->
+  <link name="camera">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="${cameraSize} ${cameraSize} ${cameraSize}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="${cameraSize} ${cameraSize} ${cameraSize}"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+
+    <inertial>
+      <mass value="${cameraMass}" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <box_inertia m="${cameraMass}" x="${cameraMass}" y="${cameraMass}" z="${cameraMass}" />
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+</robot>
